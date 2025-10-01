@@ -22,7 +22,7 @@ export default function Home() {
     return (
         <>
         <div className="bg-gradient-to-r from-blue-600 to-[#0eb3e8] text-white">
-            <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 px-16 flex flex-row gap-24 w-full ${isScrolled ? ("bg-white text-gray-600") : ("bg-gradient-to-r from-blue-600 to-[#0eb3e8] text-white")} `}>
+            <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 px-16 flex flex-row gap-24 w-full ${isScrolled ? ("bg-white text-gray-600 shadow-md") : ("bg-gradient-to-r from-blue-600 to-[#0eb3e8] text-white")} `}>
                     {isScrolled? (
                     <div>
                       <img src={SenaiLogo2} alt="Logo do Senai" className="w-32 h-auto from-blue-600 to-[#0eb3e8] text-white" />
@@ -53,17 +53,32 @@ export default function Home() {
                     </a>
                 </div>
             </div>
-            <div className="px-16 pt-60 pb-80 justify-center gap-48 flex flex-row text-9xl text-white h-auto" style={{background: 'linear-gradient(to bottom, transparent 65%, white)'}}>
-                <div className="  border-r-6 ">
-                    <div className="flex flex-col pr-32 font-bold pt-20">
-                        <span>PROJETO</span>
-                        <span>APLICADO I</span>
-                    </div>
+             <div className="flex flex-row gap-14 justify-between px-16 bg-white pt-24 pb-24">
+                <div className="border border-gray-200 w-1/2 rounded-xl shadow-md p-5">
+                    <span className="text-black flex justify-center font-bold text-3xl">O QUE É O PAQ?</span>
                 </div>
-                <div className="pr-12">
-                    <a href="https://prototipandoaquebrada.org/">
-                    <img src={LogoPaq} alt="Logo PAQ"  className="w-80 h-auto hover:-translate-y-2 transition-transform duration-200" />
-                    </a>
+                 <div className="border border-gray-200 w-1/2 rounded-xl shadow-md p-5">
+                    <span className="text-black flex justify-center font-bold text-3xl">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                     <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                     <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                     <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                     <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
+                    <span className="text-black flex justify-center">DESAFIO II</span>
                 </div>
             </div>
             </div>
