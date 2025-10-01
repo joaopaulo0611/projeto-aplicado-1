@@ -54,31 +54,21 @@ export default function Home() {
                 </div>
             </div>
              <div className="flex flex-row gap-14 justify-between px-16 bg-white pt-24 pb-24">
-                <div className="border border-gray-200 w-1/2 rounded-xl shadow-md p-5">
-                    <span className="text-black flex justify-center font-bold text-3xl">O QUE É O PAQ?</span>
+                <div className="border border-gray-200 w-1/2 rounded-xl shadow-md px-10 py-5">
+                    <span className="text-black flex justify-center font-bold text-3xl mb-6">O QUE É O PAQ?</span>
+                    <div className="text-justify text-2xl">
+                    <span className="text-black">O "Prototipando a Quebrada", também conhecido como PAQ, é uma organização cuja missão
+                       é conectar a juventude da periferia ao conhecimento e oportunidades do ecossistema de 
+                       tecnologia. Eles visam despertar os jovens para novos futuros possíveis, fazê-los sentir
+                        que pertencem ao ecossistema da tecnologia e capacitá-los para ocupar esses espaços. A 
+                        organização fornece acesso a infraestrutura de qualidade, cursos e mentoria. Além disso, 
+                        eles orientam o desenvolvimento dos jovens rumo ao sucesso nas principais carreiras de 
+                        tecnologia. Promovem também a mobilidade social através da empregabilidade, conectando 
+                        os jovens qualificados em tecnologia com oportunidades de emprego</span>
+                        </div>
                 </div>
                  <div className="border border-gray-200 w-1/2 rounded-xl shadow-md p-5">
                     <span className="text-black flex justify-center font-bold text-3xl">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                     <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                     <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                     <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                     <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
-                    <span className="text-black flex justify-center">DESAFIO II</span>
                 </div>
             </div>
             </div>
