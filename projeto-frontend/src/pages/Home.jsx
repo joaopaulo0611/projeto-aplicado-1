@@ -1,8 +1,7 @@
-import Navbar from "../components/Navbar";
 import LogoPaq from '/images/logo-paq.png'
 import { useEffect, useState, React } from "react";
-import SenaiLogo from '/images/senai-logo.png'
-import SenaiLogo2 from '/images/senai-logo2.png'
+import UniSenaiLogo from '/images/logo-unisenai.png'
+import { Link } from 'react-router-dom';
 
 export default function Home() {
 
@@ -23,20 +22,19 @@ export default function Home() {
         <>
         <div className="bg-gradient-to-r from-blue-600 to-[#0eb3e8] text-white">
             <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 px-16 flex flex-row gap-24 w-full ${isScrolled ? ("bg-white text-gray-600 shadow-md") : ("bg-gradient-to-r from-blue-600 to-[#0eb3e8] text-white")} `}>
-                    {isScrolled? (
                     <div>
-                      <img src={SenaiLogo2} alt="Logo do Senai" className="w-32 h-auto from-blue-600 to-[#0eb3e8] text-white" />
+                      <img src={UniSenaiLogo} alt="Logo do Senai" className="cursor-pointer w-32 h-auto from-blue-600 to-[#0eb3e8] text-white" />
                     </div>
-                    ) : (
-                      <div>
-                      <img src={SenaiLogo} alt="Logo do Senai" className="w-32 h-auto from-blue-600 to-[#0eb3e8] text-white" />
-                    </div>
-                    )}
                     <div className="flex flex-row justify-between w-full font-bold">
+                      <a href='#sobre'>
                       <span className={`cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}`}>INÍCIO</span>
+                      </a>
+                      <a href='#projeto'>
                       <span className={`cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}`}>NOSSO PROJETO</span>
+                      </a>
                       <span className={`cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}`}>EQUIPE</span>
-                      <span className={`cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}`}>MAPA DE CALOR</span>
+                      
+                      <Link to="/mapa-da-cidade"><span className={`cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}`}>MAPA DA CIDADE </span></Link>
                       <span className={`cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}`}>CENTROS TECNOLÓGICOS </span>
                     </div>
                   </div>
@@ -48,13 +46,15 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="pr-12">
-                    <a href="https://prototipandoaquebrada.org/">
-                    <img src={LogoPaq} alt="Logo PAQ"  className="w-80 h-auto hover:-translate-y-2 transition-transform duration-200" />
+                    <a href="https://prototipandoaquebrada.org/" target='blank'>
+                    <img src={LogoPaq} alt="Logo PAQ" target="blank" className="w-80 h-auto hover:-translate-y-2 transition-transform duration-200" />
                     </a>
                 </div>
             </div>
-             <div className="flex flex-row gap-14 justify-between px-16 bg-white pt-24 pb-24">
-                <div className="border border-gray-200 w-1/2 rounded-xl shadow-md px-10 py-5">
+            <div id='sobre'></div>
+            </div>
+            <div className="flex flex-row gap-32 justify-between px-60 bg-white pt-48 pb-24">
+                <div className="border border-gray-200 w-1/2 rounded-xl shadow-md px-10 py-5 cursor-pointer hover:shadow-xl transition duration-200">
                     <span className="text-black flex justify-center font-bold text-3xl mb-6">O QUE É O PAQ?</span>
                     <div className="text-justify text-2xl">
                     <span className="text-black">O "Prototipando a Quebrada", também conhecido como PAQ, é uma organização cuja missão
@@ -67,10 +67,32 @@ export default function Home() {
                         os jovens qualificados em tecnologia com oportunidades de emprego</span>
                         </div>
                 </div>
-                 <div className="border border-gray-200 w-1/2 rounded-xl shadow-md p-5">
+                 <div className="border border-gray-200 w-1/2 rounded-xl shadow-md p-5 text-black cursor-pointer hover:shadow-xl transition duration-200">
                     <span className="text-black flex justify-center font-bold text-3xl">DESAFIO II</span>
+                    <div className='flex flex-col gap-8 mt-12 text-2xl'>
+                    <span>• Nas cidades de rede, quais são os bairros de quebrada? </span>
+                    <span>• Qual o tamanho da população desses territórios entre 15 e 17 anos? </span>
+                    <span>• Quais escolas estão presentes nesses territórios? </span>
+                    <span>• Existem instituições de terceiro setor atuando com esses jovens? </span>
+                    </div>
                 </div>
             </div>
+            <div className="mt-44 flex flex-col items-center gap-6 pb-10 ">
+              <div className="flex justify-center">
+              <span className='text-3xl font-bold' id='projeto'>NOSSO PROJETO</span>
+              </div>
+              <div className='border text-white bg-gradient-to-br py-6 from-blue-700 to-blue-400 border-gray-200 w-3/4 rounded-xl shadow-md items-center'>
+                <span className='flex justify-center'>Texto sobre o projeto</span>
+                <span className='flex justify-center'>Texto sobre o projeto</span>
+                <span className='flex justify-center'>Texto sobre o projeto</span>
+                <span className='flex justify-center'>Texto sobre o projeto</span>
+                <span className='flex justify-center'>Texto sobre o projeto</span>
+                <span className='flex justify-center'>Texto sobre o projeto</span>
+                <span className='flex justify-center'>Texto sobre o projeto</span>
+                <span className='flex justify-center'>Texto sobre o projeto</span>
+                <span className='flex justify-center'>Texto sobre o projeto</span>
+                <span className='flex justify-center'>Texto sobre o projeto</span>
+              </div>
             </div>
         </>
     );

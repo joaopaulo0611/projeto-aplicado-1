@@ -1,37 +1,28 @@
-import { useEffect, useState, React } from "react";
-import SenaiLogo from '/images/senai-logo.png'
+import { React } from "react";
+import UniSenaiLogo from '/images/logo-unisenai.png'
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
-
-  const [isScrolled, setIsScrolled] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
 
   return (
     <>
-      <div className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-8 px-16 flex flex-row gap-24 w-full bg-gradient-to-r ${isScrolled ? ("bg-white text-gray-600") : ("from-blue-600 to-[#0eb3e8] text-white")} `}>
+      <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 px-16 flex flex-row gap-24 w-full bg-white text-gray-600 shadow-md">
         <div>
-          <img src={SenaiLogo} alt="Logo do Senai" className="w-32 h-auto" />
+          <img src={UniSenaiLogo} alt="Logo do Senai" className="cursor-pointer w-32 h-auto from-blue-600 to-[#0eb3e8] text-white" />
         </div>
         <div className="flex flex-row justify-between w-full font-bold">
-          <span className={`cursor-pointer ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("from-blue-600 to-[#0eb3e8] text-white hover:text-gray-300 transition-colors duration-200")}`}>INÍCIO</span>
-          <span className={`cursor-pointer ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("from-blue-600 to-[#0eb3e8] text-white hover:text-gray-300 transition-colors duration-200")}`}>NOSSO PROJETO</span>
-          <span className={`cursor-pointer ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("from-blue-600 to-[#0eb3e8] text-white hover:text-gray-300 transition-colors duration-200")}`}>EQUIPE</span>
-          <span className={`cursor-pointer ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("from-blue-600 to-[#0eb3e8] text-white hover:text-gray-300 transition-colors duration-200")}`}>MAPA DE CALOR</span>
-          <span className={`cursor-pointer ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("from-blue-600 to-[#0eb3e8] text-white hover:text-gray-300 transition-colors duration-200")}`}>CENTROS TECNOLÓGICOS </span>
+          <Link to={"/"}>
+          <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">INÍCIO</span>
+          </Link>
+          <Link to={"/"}>
+          <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">NOSSO PROJETO</span>
+          </Link>
+          <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">EQUIPE</span>
+          <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">MAPA DA CIDADE</span>
+          <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">CENTROS TECNOLÓGICOS </span>
         </div>
       </div>
-
     </>
   );
 }
