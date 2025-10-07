@@ -53,7 +53,7 @@ export default function Home() {
             </div>
             <div id='sobre'></div>
             </div>
-            <div className="flex flex-row gap-32 justify-between px-60 bg-white pt-48 pb-24">
+            <div className="flex flex-row gap-24 justify-between px-52 bg-white pt-48 pb-24">
                 <div className="border border-gray-200 w-1/2 rounded-xl shadow-md px-10 py-5 cursor-pointer hover:shadow-xl transition duration-200">
                     <span className="text-black flex justify-center font-bold text-3xl mb-6">O QUE É O PAQ?</span>
                     <div className="text-justify text-2xl">
