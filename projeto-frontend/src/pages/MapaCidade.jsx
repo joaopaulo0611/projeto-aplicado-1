@@ -1,5 +1,5 @@
 import { useState, React } from "react";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 import MapaSJ from '/images/mapaSJ.png'
 import { X } from 'lucide-react';
 
@@ -30,9 +30,9 @@ export default function MapaCidade() {
             </div>
 
             {modalSerraria ? (<div>
-''                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
                     <div className="bg-gray-800/70  rounded-4xl p-3 cursor-pointer" onClick={closeModalSerraria}>
-                    <X className=" text-white hover:text-gray-400"></X>
+                        <X className=" text-white hover:text-gray-400"></X>
                     </div>
                 </div>
             </div>) : (

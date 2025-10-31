@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Home from './pages/Home';
-import MapaCidade from './components/MapaCidade';
+import MapaCidade from './pages/MapaCidade';
 
 function App() {
 

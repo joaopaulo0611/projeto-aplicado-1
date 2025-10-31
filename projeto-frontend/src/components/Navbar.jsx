@@ -18,7 +18,9 @@ export default function Navbar() {
           <Link to={"/"}>
           <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">NOSSO PROJETO</span>
           </Link>
+          <Link to={"/"}>
           <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">EQUIPE</span>
+          </Link>
           <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">MAPA DA CIDADE</span>
           <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">CENTROS TECNOLÓGICOS </span>
         </div>
