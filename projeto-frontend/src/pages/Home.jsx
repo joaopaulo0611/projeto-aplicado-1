@@ -132,40 +132,40 @@ export default function Home() {
             <div className='bg-gray-300 p-20 w-2 rounded-full'>
             </div>
             <div className='pt-1 flex flex-col justify-center'>
-              <span className='text-xl text-center font-bold'>João Paulo Cappeletti</span>
-              <span className=''>joaopaulocappeletti06@gmail.com</span>
+              <span className='text-xl text-center font-bold'>Matheus Silva da Cruz	</span>
+              <span className=''>matheus_silva-cruz@estudante.sesisenai.org.br	</span>
             </div>
           </div>
           <div className='flex flex-col justify-center items-center'>
             <div className='bg-gray-300 p-20 w-2 rounded-full'>
             </div>
             <div className='pt-1 flex flex-col justify-center'>
-              <span className='text-xl text-center font-bold'>João Paulo Cappeletti</span>
-              <span className=''>joaopaulocappeletti06@gmail.com</span>
+              <span className='text-xl text-center font-bold'>Nicolas Andre Krause de Mello	</span>
+              <span className='text-center'>mello.nicolasandre@gmail.com</span>
             </div>
           </div>
           <div className='flex flex-col justify-center items-center'>
             <div className='bg-gray-300 p-20 w-2 rounded-full'>
             </div>
             <div className='pt-1 flex flex-col justify-center'>
-              <span className='text-xl text-center font-bold'>João Paulo Cappeletti</span>
-              <span className=''>joaopaulocappeletti06@gmail.com</span>
+              <span className='text-xl text-center font-bold'>Rafagath Grazziotin Miceli Klug</span>
+              <span className='text-center'>	rafagmk@gmail.com</span>
             </div>
           </div>
-          <div className='flex flex-col justify-center items-center'>
+          {/* <div className='flex flex-col justify-center items-center'>
             <div className='bg-gray-300 p-20 w-2 rounded-full'>
             </div>
             <div className='pt-1 flex flex-col justify-center'>
               <span className='text-xl text-center font-bold'>João Paulo Cappeletti</span>
               <span className=''>joaopaulocappeletti06@gmail.com</span>
             </div>
-          </div>
+          </div> */}
 
         </div>
       </div>
 
       <div className='mt-32 bg-blue-900 py-24'>
-        <span className='text-white '>footer</span>
+        <span className='text-blue-900'>footer</span>
       </div>
     </>
   );
