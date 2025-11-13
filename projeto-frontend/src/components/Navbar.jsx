@@ -18,8 +18,8 @@ export default function Navbar() {
           <Link to={"/"} className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
           <span className=" text-gray-500 hover:text-gray-700">EQUIPE</span>
           </Link>
-          <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">MAPA DA CIDADE</span>
-          <span className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 text-gray-500 hover:text-gray-700">CENTROS TECNOLÓGICOS </span>
+          <Link to="/mapa-da-cidade" className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200"><span className=" text-gray-500 hover:text-gray-700">MAPA DA CIDADE</span></Link>
+          <Link to="/centros-tecnologicos" className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200"><span className=" text-gray-500 hover:text-gray-700">CENTROS TECNOLÓGICOS </span></Link>
           <Link to="/dashboard" className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200"><span className=" text-gray-500 hover:text-gray-700">DASHBOARD</span></Link>
         </div>
       </div>

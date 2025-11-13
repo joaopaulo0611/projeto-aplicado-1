@@ -1,7 +1,7 @@
-import { useState, React } from "react";
+import {  React } from "react";
 import Navbar from "../components/Navbar";
-import MapaSJ from '/images/mapaSJ.png'
-import { X } from 'lucide-react';
+import Footer from "../components/Footer";
+
 
 export default function MapaCidade() {
 

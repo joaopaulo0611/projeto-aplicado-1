@@ -2,6 +2,7 @@ import LogoPaq from '/images/logo-paq.png'
 import { useEffect, useState, React } from "react";
 import UniSenaiLogo from '/images/logo-unisenai.png'
 import { Link } from 'react-router-dom';
+import Footer from "../components/Footer";
 
 export default function Home() {
 
@@ -21,10 +22,10 @@ export default function Home() {
   return (
     <>
       <div className="bg-gradient-to-r from-blue-600 to-[#0eb3e8] text-white">
-        <div className={`fixed top-0 hidden md:block left-0 right-0 z-50 transition-all duration-300 py-6 px-16 flex flex-row gap-24 w-full ${isScrolled ? ("bg-white text-gray-600 shadow-md") : ("bg-gradient-to-r from-blue-600 to-[#0eb3e8] text-white")} `}>
+        <div className={`fixed top-0 md:block left-0 right-0 z-50 transition-all duration-300 py-6 px-16 flex flex-row gap-24 w-full ${isScrolled ? ("bg-white text-gray-600 shadow-md") : ("bg-gradient-to-r from-blue-600 to-[#0eb3e8] text-white")} `}>
 
           <div className="flex flex-row justify-between w-full font-bold">
-            <a href='#sobre' className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
+            <a href='/' className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
               <span className={isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}>INÍCIO</span>
             </a>
             <a href='#projeto' className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
@@ -36,7 +37,9 @@ export default function Home() {
             <Link to="/mapa-da-cidade" className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
               <span className={isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}>MAPA DA CIDADE </span>
             </Link>
-            <span className={`cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}`}>CENTROS TECNOLÓGICOS </span>
+            <Link to="/centros-tecnologicos" className='cursor-pointer hover:-translate-y-0.5 transition-transform duration-200'>
+            <span className={` ${isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}`}>CENTROS TECNOLÓGICOS </span>
+            </Link>
             <Link to="/dashboard" className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
               <span className={isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}>DASHBOARD</span>
             </Link>
@@ -116,9 +119,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='mt-48'>
-        <div className='justify-center flex pt-10 pb-20 text-black text-3xl font-bold' id='equipe'>
-          <span>EQUIPE</span>
+      <div className='mt-48 pb-32'>
+        <div className='justify-center flex pt-10 pb-20 text-black text-3xl font-bold' >
+          <span id='equipe' style={{ scrollMarginTop: '30vh' }}>EQUIPE</span>
 
         </div>
         <div className='flex flex-row gap-28 justify-center pb-20'>
@@ -156,21 +159,10 @@ export default function Home() {
               <span className='text-center'>	rafagmk@gmail.com</span>
             </div>
           </div>
-          {/* <div className='flex flex-col justify-center items-center'>
-            <div className='bg-gray-300 p-20 w-2 rounded-full'>
-            </div>
-            <div className='pt-1 flex flex-col justify-center'>
-              <span className='text-xl text-center font-bold'>João Paulo Cappeletti</span>
-              <span className=''>joaopaulocappeletti06@gmail.com</span>
-            </div>
-          </div> */}
-
         </div>
       </div>
 
-      <div className='mt-32 bg-blue-900 py-24'>
-        <span className='text-blue-900'>footer</span>
-      </div>
+      <Footer />
     </>
   );
 }
