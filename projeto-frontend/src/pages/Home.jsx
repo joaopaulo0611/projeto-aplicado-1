@@ -31,7 +31,7 @@ export default function Home() {
             <a href='#projeto' className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
               <span className={isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}>NOSSO PROJETO</span>
             </a>
-            <a href='#equipe' className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
+            <a href='#equipe' className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 scroll-behavior-smooth">
               <span className={isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}>EQUIPE</span>
             </a>
             <Link to="/mapa-da-cidade" className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
@@ -90,9 +90,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-44 flex flex-col items-center gap-6 pb-10" >
+      <div className="mt-40 flex flex-col items-center gap-6 pb-10" >
         <div className='border text-white bg-gradient-to-br py-16 w-full from-blue-700 to-blue-400 border-gray-200 shadow-md items-center'>
-          <div className="flex justify-center" id='projeto' style={{ scrollMarginTop: '16rem' }}>
+          <div className="flex justify-center" id='projeto' style={{ scrollMarginTop: '18rem' }}>
             <span className='text-4xl font-bold'>NOSSO PROJETO</span>
           </div>
           <div className='mt-10 w-5/6 justify-center mx-auto'>
@@ -119,7 +119,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='mt-48 pb-32'>
+      <div className='mt-42 pb-32'>
         <div className='justify-center flex pt-10 pb-20 text-black text-3xl font-bold' >
           <span id='equipe' style={{ scrollMarginTop: '30vh' }}>EQUIPE</span>
 

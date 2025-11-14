@@ -42,7 +42,7 @@ export default function MapaCidade() {
                 <span>O mapa exibe os principais bairros e regiões mais vulnerabilizados da cidade de São José - SC</span>
             </div>
             <div className="relative flex justify-center mt-10 pb-4">
-                <img src={MapaSJ} alt="Mapa da cidade de São José" className="w-150 bordertransition duration-200 border-gray-200 rounded-2xl shadow-md h-auto mt-6" />
+                <img src={MapaSJ} alt="Mapa da cidade de São José" className="w-150 duration-200 border-gray-200 rounded-2xl shadow-md h-auto mt-6" />
                 <div onClick={openModalSerraria} className="mt-32 ml-52 absolute shadow2xl bg-red-600/60 p-4 rounded-4xl hover:bg-red-600/80 cursor-pointer"></div>
                 <div onClick={openModalPedregal} className="mt-56 ml-56 absolute shadow2xl bg-red-600/60 p-3 rounded-4xl hover:bg-red-600/80 cursor-pointer"></div>
                 <div onClick={openModalJardimCidade} className="mt-58 ml-80 absolute shadow2xl bg-red-600/60 p-3 rounded-4xl hover:bg-red-600/80 cursor-pointer"></div>
@@ -98,7 +98,7 @@ export default function MapaCidade() {
                                 <Link to="/dashboard" className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2"><span className="font-semibold ">Ver os dados do bairro </span><ArrowRight className="font-semibold" /></Link>
                                 </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>)}
@@ -141,10 +141,10 @@ export default function MapaCidade() {
                                 </div>
                             </div>
                             <div className="mt-8 pb-6 text-end w-full flex justify-end gap-1">
-                                <Link to="/dashboard" className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2"><span className="font-semibold ">Ver os dados do bairro </span><ArrowRight className="font-semibold" /></Link>
+                                <Link to="/dashboard" state={{ openPedregal: true }} className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2"><span className="font-semibold ">Ver os dados do bairro </span><ArrowRight className="font-semibold" /></Link>
                                 </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>)}
@@ -187,7 +187,7 @@ export default function MapaCidade() {
                                 </div>
                             </div>
                             <div className="mt-8 pb-6 text-end w-full flex justify-end gap-1">
-                                <Link to="/dashboard" className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2"><span className="font-semibold ">Ver os dados do bairro </span><ArrowRight className="font-semibold" /></Link>
+                                <Link to="/dashboard" state={{ openJardimCidade: true }} className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2"><span className="font-semibold ">Ver os dados do bairro </span><ArrowRight className="font-semibold" /></Link>
                                 </div>
                         </div>
                         
