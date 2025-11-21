@@ -1,15 +1,29 @@
 import { React, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
+   const navigate = useNavigate();
+
+   const handleProjetoClick = () => {
+     setIsMenuOpen(false);
+     navigate('/');
+     setTimeout(() => {
+       const element = document.getElementById('projeto');
+       if (element) {
+         const yOffset = -80;
+         const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+         window.scrollTo({ top: y, behavior: 'smooth' });
+       }
+     }, 100);
+   };
 
 
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6 px-16 flex flex-row gap-24 w-full bg-white text-gray-600 shadow-md">
-        <div className="hidden md:block flex-row justify-between w-full font-bold">
+        <div className="hidden md:flex flex-row justify-between w-full font-bold">
           <Link to={"/"} className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
           <span className="text-gray-500 hover:text-gray-700">INÍCIO</span>
           </Link>
@@ -35,8 +49,8 @@ export default function Navbar() {
           {isMenuOpen && (
             <div className="mt-4 flex flex-col gap-4 font-bold pb-4 text-gray-600">
               <a href='/' onClick={() => setIsMenuOpen(false)}>INÍCIO</a>
-              <a href='#projeto' onClick={() => setIsMenuOpen(false)}>NOSSO PROJETO</a>
-              <a href='#equipe' onClick={() => setIsMenuOpen(false)}>EQUIPE</a>
+              <button onClick={handleProjetoClick} className="text-left">NOSSO PROJETO</button>
+              <a href='/#equipe' onClick={() => setIsMenuOpen(false)}>EQUIPE</a>
               <Link to="/mapa-da-cidade" onClick={() => setIsMenuOpen(false)}>MAPA DA CIDADE</Link>
               <Link to="/centros-tecnologicos" onClick={() => setIsMenuOpen(false)}>CENTROS TECNOLÓGICOS</Link>
               <Link to="/dashboard" onClick={() => setIsMenuOpen(false)}>DASHBOARD</Link>

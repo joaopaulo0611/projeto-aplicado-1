@@ -30,9 +30,16 @@ export default function Home() {
             <a href='/' className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
               <span className={isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}>INÍCIO</span>
             </a>
-            <a href='#projeto' className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
+            <button onClick={() => {
+              const element = document.getElementById('projeto');
+              if (element) {
+                const yOffset = -200;
+                const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+              }
+            }} className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200">
               <span className={isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}>NOSSO PROJETO</span>
-            </a>
+            </button>
             <a href='#equipe' className="cursor-pointer hover:-translate-y-0.5 transition-transform duration-200 scroll-behavior-smooth">
               <span className={isScrolled ? ("text-gray-500 hover:text-gray-700") : ("text-white hover:text-gray-300 transition-colors duration-200")}>EQUIPE</span>
             </a>
@@ -57,14 +64,25 @@ export default function Home() {
           </div>
 
           {isMenuOpen && (
-            <div className="mt-4 flex flex-col gap-4 font-bold pb-4 text-gray-600">
-              <a href='/' onClick={() => setIsMenuOpen(false)}>INÍCIO</a>
-              <a href='#projeto' onClick={() => setIsMenuOpen(false)}>NOSSO PROJETO</a>
-              <a href='#equipe' onClick={() => setIsMenuOpen(false)}>EQUIPE</a>
-              <Link to="/mapa-da-cidade" onClick={() => setIsMenuOpen(false)}>MAPA DA CIDADE</Link>
-              <Link to="/centros-tecnologicos" onClick={() => setIsMenuOpen(false)}>CENTROS TECNOLÓGICOS</Link>
-              <Link to="/dashboard" onClick={() => setIsMenuOpen(false)}>DASHBOARD</Link>
-            </div>
+            <>
+              <div className="fixed inset-0 bg-transparent z-40" onClick={() => setIsMenuOpen(false)}></div>
+              <div className="mt-4 flex flex-col gap-4 font-bold pb-4 text-gray-600 relative z-50">
+                <a href='/' onClick={() => setIsMenuOpen(false)}>INÍCIO</a>
+                <button onClick={() => {
+                  setIsMenuOpen(false);
+                  const element = document.getElementById('projeto');
+                  if (element) {
+                    const yOffset = -120;
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                  }
+                }} className='text-start'>NOSSO PROJETO</button>
+                <a href='#equipe' onClick={() => setIsMenuOpen(false)}>EQUIPE</a>
+                <Link to="/mapa-da-cidade" onClick={() => setIsMenuOpen(false)}>MAPA DA CIDADE</Link>
+                <Link to="/centros-tecnologicos" onClick={() => setIsMenuOpen(false)}>CENTROS TECNOLÓGICOS</Link>
+                <Link to="/dashboard" onClick={() => setIsMenuOpen(false)}>DASHBOARD</Link>
+              </div>
+            </>
           )}
         </div>
 
@@ -114,9 +132,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-20 md:mt-40 flex flex-col items-center gap-6 pb-10 overflow-x-hidden max-w-full" >
+      <div id='projeto' className="mt-20 md:mt-40 flex flex-col items-center gap-6 pb-10 overflow-x-hidden max-w-full" style={{ scrollMarginTop: '0px' }}>
         <div className='text-white bg-gradient-to-br py-8 md:py-16 w-full max-w-[100vw] from-blue-700 to-blue-400 shadow-md items-center overflow-x-hidden'>
-          <div className="flex justify-center px-4" id='projeto' style={{ scrollMarginTop: '18rem' }}>
+          <div className="flex justify-center px-4">
             <span className='text-2xl sm:text-3xl md:text-4xl font-bold text-center'>NOSSO PROJETO</span>
           </div>
           <div className='mt-6 md:mt-10 w-11/12 md:w-5/6 justify-center mx-auto'>
