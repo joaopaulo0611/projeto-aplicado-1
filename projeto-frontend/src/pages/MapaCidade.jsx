@@ -1,16 +1,30 @@
-import { useState, React } from "react";
+import { useState, React, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import MapaSJ from '/images/mapaSJ.png'
 import { X, ArrowRight, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Footer from "../components/Footer";
-
+import Serraria from '/images/serraria.png'
+import Pedregal from '/images/pedregal.png'
+import JardimCidade from '/images/jardimCidade.png'
 
 export default function MapaCidade() {
 
     const [modalSerraria, setModalSerraria] = useState(false);
     const [modalPedregal, setModalPedregal] = useState(false);
     const [modalJardimCidade, setModalJardimCidade] = useState(false);
+
+    useEffect(() => {
+        if (modalSerraria || modalPedregal || modalJardimCidade) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [modalSerraria, modalPedregal, modalJardimCidade]);
 
     function openModalSerraria() {
         setModalSerraria(true);
@@ -37,19 +51,19 @@ export default function MapaCidade() {
     return (
         <>
             <Navbar />
-            <div className="text-black pt-32 px-20 flex flex-col gap-1">
-                <span className="text-3xl font-bold">Mapa da cidade de São José</span>
-                <span>O mapa exibe os principais bairros e regiões mais vulnerabilizados da cidade de São José - SC</span>
+            <div className="text-black pt-24 md:pt-32 px-6 md:px-20 flex flex-col gap-1">
+                <span className="text-2xl md:text-3xl font-bold">Mapa da cidade de São José</span>
+                <span className="text-sm md:text-base">O mapa exibe os principais bairros e regiões mais vulnerabilizados da cidade de São José - SC</span>
             </div>
-            <div className="relative flex justify-center mt-10 pb-4">
-                <img src={MapaSJ} alt="Mapa da cidade de São José" className="w-150 duration-200 border-gray-200 rounded-2xl shadow-md h-auto mt-6" />
-                <div onClick={openModalSerraria} className="mt-32 ml-52 absolute shadow2xl bg-red-600/60 p-4 rounded-4xl hover:bg-red-600/80 cursor-pointer"></div>
-                <div onClick={openModalPedregal} className="mt-56 ml-56 absolute shadow2xl bg-red-600/60 p-3 rounded-4xl hover:bg-red-600/80 cursor-pointer"></div>
-                <div onClick={openModalJardimCidade} className="mt-58 ml-80 absolute shadow2xl bg-red-600/60 p-3 rounded-4xl hover:bg-red-600/80 cursor-pointer"></div>
+            <div className="relative flex justify-center mt-6 md:mt-10 pb-4 px-4 md:px-0">
+                <img src={MapaSJ} alt="Mapa da cidade de São José" className="w-full md:w-[600px] duration-200 border-gray-200 rounded-xl md:rounded-2xl shadow-md h-auto mt-3 md:mt-6" />
+                <div onClick={openModalSerraria} className="top-[30%] left-[35%] md:top-[35%] md:left-[37%] absolute shadow-2xl bg-red-600/60 p-2 md:p-4 rounded-full hover:bg-red-600/80 cursor-pointer"></div>
+                <div onClick={openModalPedregal} className="top-[50%] left-[37%] md:top-[52%] md:left-[39%] absolute shadow-2xl bg-red-600/60 p-2 md:p-3 rounded-full hover:bg-red-600/80 cursor-pointer"></div>
+                <div onClick={openModalJardimCidade} className="top-[52%] left-[53%] md:top-[54%] md:left-[54%] absolute shadow-2xl bg-red-600/60 p-2 md:p-3 rounded-full hover:bg-red-600/80 cursor-pointer"></div>
             </div>
-            <div className="flex justify-start gap-1 text-gray-500 text-sm w-150 mx-auto pb-52">
-                <div className="ml-3">
-                    <MapPin  className="font-light size-5 flex"/>
+            <div className="flex justify-center md:justify-start gap-1 text-gray-500 text-xs md:text-sm w-full md:w-[600px] mx-auto pb-10 md:pb-52 px-4 md:px-0">
+                <div className="ml-0 md:ml-3">
+                    <MapPin  className="font-light size-4 md:size-5 flex"/>
                 </div>
                 <div>
                     <span>Clique nas regiões em destaque para ver mais informações</span>
@@ -58,27 +72,27 @@ export default function MapaCidade() {
 
             <Footer />
             {modalSerraria && (<div>
-                <div onClick={closeModalSerraria} className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                   <div onClick={(e) => e.stopPropagation()} className="flex flex-col bg-white rounded-lg">
+                <div onClick={closeModalSerraria} className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                   <div onClick={(e) => e.stopPropagation()} className="flex flex-col bg-white rounded-lg max-h-[90vh] overflow-y-auto">
                         <div className="flex justify-end pt-4 pr-4">
-                            <X className="  text-gray-600 hover:text-gray-800 cursor-pointer z-50" onClick={closeModalSerraria}></X>
+                            <X className="text-gray-600 hover:text-gray-800 cursor-pointer z-50" onClick={closeModalSerraria}></X>
                         </div>
-                        <div className=" px-10 max-w-[900px] ">
+                        <div className="px-6 md:px-10 max-w-[900px]">
                             <div className="flex justify-between items-center">
                                 <div>
-                                    <span className="text-2xl font-bold">Serraria, São José - SC</span>
+                                    <span className="text-xl md:text-2xl font-bold">Serraria, São José - SC</span>
                                 </div>
                             </div>
-                            <div className="flex flex-row gap-24 justify-between mt-8">
-                                <div>
-                                    <img src="/images/serraria.jpg" alt="Imagem da Serraria" className="w-96 h-auto mt-4 mb-4 rounded-2xl shadow-md" />
+                            <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-10 mt-6 md:mt-8">
+                                <div className="w-full md:w-1/2">
+                                    <img src={Serraria} alt="Imagem da Serraria" className="w-full mb-4 rounded-xl shadow-lg" />
                                 </div>
-                                <div className="text-justify flex flex-col gap-2">
-                                    <div >
-                                    <span className="font-semibold text-xl">Região: </span><span className="text-xl">Rua dos Operários</span>
+                                <div className="text-justify w-full md:w-1/2 flex flex-col gap-2">
+                                    <div>
+                                    <span className="font-semibold text-lg md:text-xl">Região: </span><span className="text-lg md:text-xl">Rua dos Operários</span>
                                     </div>
                                     <div>
-                                    <span>A Rua dos Operários fica no bairro Serraria, em São José, na
+                                    <span className="text-sm md:text-base">A Rua dos Operários fica no bairro Serraria, em São José, na
                                         região metropolitana de Florianópolis (Grande Florianópolis).
                                         É uma via residencial, com acesso pela marginal da BR-101, próxima
                                         a bairros como Barreiros, Ipiranga e Areias. É uma área mista, com
@@ -94,8 +108,8 @@ export default function MapaCidade() {
                                 </div>
                                 </div>
                             </div>
-                            <div className="mt-8 pb-6 text-end w-full flex justify-end gap-1">
-                                <Link to="/dashboard" className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2"><span className="font-semibold ">Ver os dados do bairro </span><ArrowRight className="font-semibold" /></Link>
+                            <div className="mt-6 md:mt-8 pb-6 text-end w-full flex justify-end gap-1">
+                                <Link to="/dashboard" className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2 text-sm md:text-base"><span className="font-semibold">Ver os dados do bairro </span><ArrowRight className="font-semibold size-4 md:size-5" /></Link>
                                 </div>
                         </div>
 
@@ -104,27 +118,27 @@ export default function MapaCidade() {
             </div>)}
 
             {modalPedregal && (<div>
-                <div onClick={closeModalPedregal} className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                    <div onClick={(e) => e.stopPropagation()} className="flex flex-col bg-white rounded-lg">
+                <div onClick={closeModalPedregal} className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                    <div onClick={(e) => e.stopPropagation()} className="flex flex-col bg-white rounded-lg max-h-[90vh] overflow-y-auto">
                         <div className="flex justify-end pt-4 pr-4">
-                            <X className="  text-gray-600 hover:text-gray-800 cursor-pointer z-50" onClick={closeModalPedregal}></X>
+                            <X className="text-gray-600 hover:text-gray-800 cursor-pointer z-50" onClick={closeModalPedregal}></X>
                         </div>
-                        <div className=" px-10 max-w-[900px] ">
+                        <div className="px-6 md:px-10 max-w-[900px]">
                             <div className="flex justify-between items-center">
                                 <div>
-                                    <span className="text-2xl font-bold">Pedregal, São José - SC</span>
+                                    <span className="text-xl md:text-2xl font-bold">Pedregal, São José - SC</span>
                                 </div>
                             </div>
-                            <div className="flex flex-row gap-24 justify-between mt-8">
-                                <div>
-                                    <img src="/images/serraria.jpg" alt="Imagem da Serraria" className="w-96 h-auto mt-4 mb-4 rounded-2xl shadow-md" />
+                            <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-10 mt-6 md:mt-8">
+                                <div className="w-full md:w-1/2">
+                                    <img src={Pedregal} alt="Imagem de Pedregal" className="w-full mb-4 rounded-xl shadow-lg" />
                                 </div>
-                                <div className="text-justify flex flex-col gap-2">
+                                <div className="text-justify flex flex-col w-full md:w-1/2 gap-2">
                                     <div>
-                                    <span className="font-semibold text-xl">Região: </span><span className="text-xl">Pedregal</span>
+                                    <span className="font-semibold text-lg md:text-xl">Região: </span><span className="text-lg md:text-xl">Pedregal</span>
                                     </div>
                                     <div>
-                                    <span>O Pedregal, localizado em São José, é uma das áreas mais conhecidas 
+                                    <span className="text-sm md:text-base">O Pedregal, localizado em São José, é uma das áreas mais conhecidas 
                                         por sua vulnerabilidade social na Grande Florianópolis. Surgido a partir
                                         de ocupações irregulares, o bairro cresceu de forma rápida e desordenada,
                                         concentrando uma grande quantidade de moradias populares e famílias de
@@ -140,8 +154,8 @@ export default function MapaCidade() {
                                 </div>
                                 </div>
                             </div>
-                            <div className="mt-8 pb-6 text-end w-full flex justify-end gap-1">
-                                <Link to="/dashboard" state={{ openPedregal: true }} className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2"><span className="font-semibold ">Ver os dados do bairro </span><ArrowRight className="font-semibold" /></Link>
+                            <div className="mt-6 md:mt-8 pb-6 text-end w-full flex justify-end gap-1">
+                                <Link to="/dashboard" state={{ openPedregal: true }} className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2 text-sm md:text-base"><span className="font-semibold">Ver os dados do bairro </span><ArrowRight className="font-semibold size-4 md:size-5" /></Link>
                                 </div>
                         </div>
 
@@ -150,28 +164,27 @@ export default function MapaCidade() {
             </div>)}
 
             {modalJardimCidade && (<div>
-                <div onClick={closeModalJardimCidade} className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                    <div onClick={(e) => e.stopPropagation()} className="flex flex-col bg-white rounded-lg">
+                <div onClick={closeModalJardimCidade} className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                    <div onClick={(e) => e.stopPropagation()} className="flex flex-col bg-white rounded-lg max-h-[90vh] overflow-y-auto">
                         <div className="flex justify-end pt-4 pr-4">
-                            <X className="  text-gray-600 hover:text-gray-800 cursor-pointer z-50" onClick={closeModalJardimCidade}></X>
+                            <X className="text-gray-600 hover:text-gray-800 cursor-pointer z-50" onClick={closeModalJardimCidade}></X>
                         </div>
-                        <div className=" px-10 max-w-[900px] ">
+                        <div className="px-6 md:px-10 max-w-[900px]">
                             <div className="flex justify-between items-center">
                                 <div>
-                                    <span className="text-2xl font-bold">Jardim Cidade de Florianópolis, São José - SC</span>
+                                    <span className="text-xl md:text-2xl font-bold">Jardim Cidade de Florianópolis, São José - SC</span>
                                 </div>
                             </div>
-                            <div className="flex flex-row gap-24 justify-between mt-8">
-                                <div>
-                                    <img src="/images/serraria.jpg" alt="Imagem da Serraria" className="w-96 h-auto mt-4 mb-4 rounded-2xl shadow-md" />
+                            <div className="flex flex-col md:flex-row justify-between gap-6 md:gap-10 mt-6 md:mt-8">
+                                <div className="w-full md:w-1/2">
+                                    <img src={JardimCidade} alt="Imagem da Serraria" className="w-full mb-4 rounded-xl shadow-lg" />
                                 </div>
-                                <div className="text-justify flex flex-col gap-2">
+                                <div className="text-justify flex flex-col gap-2 w-full md:w-1/2">
                                     <div>
-                                    <span className="font-semibold text-xl">Região: </span><span className="text-xl">Jardim Solemar</span>
+                                    <span className="font-semibold text-lg md:text-xl">Região: </span><span className="text-lg md:text-xl">Jardim Solemar</span>
                                     </div>
-                                    <div>
                                         <div className="text-justify">
-                                        <span>O Jardim Solemar é uma comunidade localizada em São José, dentro
+                                        <span className="text-sm md:text-base">O Jardim Solemar é uma comunidade localizada em São José, dentro
                                             do bairro Jardim Cidade de Florianópolis. A região surgiu a partir
                                             de ocupações informais e, com o passar dos anos, foi se transformando
                                             em um espaço consolidado, marcado por moradias simples e grande senso
@@ -183,11 +196,10 @@ export default function MapaCidade() {
                                             Solemar ao tecido urbano da cidade e valorizando sua história como
                                             parte viva de São José.</span>
                                         </div>
-                                    </div>
                                 </div>
                             </div>
-                            <div className="mt-8 pb-6 text-end w-full flex justify-end gap-1">
-                                <Link to="/dashboard" state={{ openJardimCidade: true }} className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2"><span className="font-semibold ">Ver os dados do bairro </span><ArrowRight className="font-semibold" /></Link>
+                            <div className="mt-6 md:mt-8 pb-6 text-end w-full flex justify-end gap-1">
+                                <Link to="/dashboard" state={{ openJardimCidade: true }} className="flex items-center gap-1 hover:bg-gray-50 p-2 rounded-xl duration-300 hover:translate-x-2 text-sm md:text-base"><span className="font-semibold">Ver os dados do bairro </span><ArrowRight className="font-semibold size-4 md:size-5" /></Link>
                                 </div>
                         </div>
                         
